@@ -20,6 +20,8 @@
         <module>user_provider_8003_hystrix</module>
         <module>user_consumer_9004_feign_hystrix</module>
         <module>zuul_gateway_9527</module>
+        <module>config_server_1299</module>
+        <module>config_client_4396</module>
     </modules>
 
     <properties>

@@ -1,0 +1,20 @@
+server:
+  port: 1299
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-7001.com:7001/eureka,http://eureka-7002.com:7002/eureka
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xiaji520/microservice-config.git
+          username: 83954439@qq.com
+          password: xrj5995201314
+
+

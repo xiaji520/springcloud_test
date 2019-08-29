@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: spring-cloud-config-client #有bootstrap.yml这个文件就不起作用
+
+

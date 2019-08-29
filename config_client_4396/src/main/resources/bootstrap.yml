@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:1299 #configserver服务端
+      label: master # master分支
+      name: application-user # 那个配置配置
+      profile: test #配置文件中那个环境
+eureka:
+  client:
+    service-url:
+     defaultZone: http://eureka-7001.com:7001/eureka,http://eureka-7002.com:7002/eureka
+  instance:
+    prefer-ip-address: true #显示客户端真实ip
