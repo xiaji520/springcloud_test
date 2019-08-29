@@ -1,0 +1,20 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: GATEWAY-ZUUL #不要使用下划线
+
+eureka:
+  client:
+    service-url:
+      # defaultZone: http://localhost:7001/eureka  #告诉服务提供者要把服务注册到哪儿
+      defaultZone: http://eureka-7001.com:7001/eureka,http://eureka-7002.com:7002/eureka
+  instance:
+    prefer-ip-address: true  #在注册中心显示Eureka客户端真实ip地址
+zuul:
+  routes:
+    myUser.serviceId: user-provider # 服务名
+    myUser.path: /myUser/** # 把myUser打头的所有请求都转发给user-provider
+  ignored-services: "*" #所有服务都不允许以服务名来访问
+  prefix: "/services" #加一个统一前缀 http://localhost:9527/services/myUser/user/provider/2
+  retryable: true #是否重试
